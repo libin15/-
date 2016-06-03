@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "StartView.h"
 
 @interface ViewController ()
 
@@ -16,7 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    CGSize size = [StartView sizeForImage];
+    StartView *start = [[StartView alloc]initWithFrame:CGRectMake(50, 60, size.width    , size.height)];
+    start.backgroundColor = [UIColor redColor];
+    [self.view addSubview:start];
+    
 }
 
 - (void)didReceiveMemoryWarning {
